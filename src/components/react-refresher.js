@@ -7,12 +7,14 @@ export default class extends PureComponent{
   static propTypes = {
     className:PropTypes.string,
     status:PropTypes.string,
+    size:PropTypes.string,
     statusList:PropTypes.array
   };
 
   static defaultProps = {
     className:'',
     status:'init',
+    size:'14px',
     statusList:['init','active','running','finish']
   };
 
@@ -28,10 +30,11 @@ export default class extends PureComponent{
 
   render(){
     let children = this.props.children || this.getDefaultChildren();
-    const { className, status, statusList} = this.props;
+    const { className, status, statusList, size} = this.props;
     return (
       <div
       className={classNames('react-refresher',className)}
+      style={{fontSize:size}}
       data-status={status}
       >
         {

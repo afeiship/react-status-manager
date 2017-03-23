@@ -30,7 +30,7 @@ class App extends React.Component{
   render(){
     return (
       <div className="hello-react-refresher">
-        <ReactRefresher status={this.state.status} />
+        <ReactRefresher size="16px" status={this.state.status} />
 
         <button onClick={this.click1}>to `init`</button>
         <button onClick={this.click2}>to `active`</button>
