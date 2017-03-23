@@ -1,0 +1,43 @@
+*{margin: 0;padding:0;}
+ul,li{list-style: none;}
+
+.hello-react-refresher{
+  color:#F00;
+  padding:100px 20px;
+  position: relative;
+
+
+  .react-refresher{
+    text-align: center;
+    height:50px;
+    line-height: 50px;
+    background-color: #eee;
+    &[data-status=init]{}
+    &[data-status=active]{}
+    &[data-status=running]{
+      &,
+      & *{
+        vertical-align: middle;
+      }
+    }
+    &[data-status=finish]{}
+  }
+  button{
+    background: #3cc51f;
+    width:100%;
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    color:#FFF;
+    padding:20px;
+    border: none;
+
+    &:active{
+      background: darken(#3cc51f,10%);
+    }
+
+    &:focus{
+      outline: none;
+    }
+  }
+}
