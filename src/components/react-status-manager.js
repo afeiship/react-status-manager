@@ -13,7 +13,7 @@ export default class extends PureComponent{
   static defaultProps = {
     status:'init',
     size:'14px',
-    statusList:['init','active','running','finish']
+    statusList:['init']
   };
 
   render(){
