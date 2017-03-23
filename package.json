@@ -1,29 +1,32 @@
 {
-  "name": "react-refresher",
+  "name": "react-status-manager",
   "version": "0.1.0",
-  "description": "React refresher for pull to refresh.",
+  "description": "React component for status manager.",
   "author": "afeiship <1290657123@qq.com>",
   "keywords": [
     "components",
-    "react-refresher",
+    "react",
+    "status",
+    "manager",
+    "state",
     "ui",
     "theme"
   ],
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/afeiship/react-refresher.git"
+    "url": "git+https://github.com/afeiship/react-status-manager.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/afeiship/react-refresher/issues"
+    "url": "https://github.com/afeiship/react-status-manager/issues"
   },
-  "homepage": "https://github.com/afeiship/react-refresher",
+  "homepage": "https://github.com/afeiship/react-status-manager",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js"
   },
-  "main": "./dist/react-refresher.js",
+  "main": "./dist/react-status-manager.js",
   "devDependencies": {
     "autoprefixer": "^6.4.0",
     "autoprefixer-loader": "^3.2.0",

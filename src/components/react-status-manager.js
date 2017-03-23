@@ -1,7 +1,6 @@
 import './style.scss';
 import classNames from 'classnames';
 import {createElement,PureComponent,PropTypes} from 'react';
-import loadingImg from './loading.svg';
 
 export default class extends PureComponent{
   static propTypes = {
@@ -12,28 +11,16 @@ export default class extends PureComponent{
   };
 
   static defaultProps = {
-    className:'',
     status:'init',
     size:'14px',
     statusList:['init','active','running','finish']
   };
 
-  getDefaultChildren(){
-    let children = [];
-    return [
-      createElement('span',{key:0},'下拉刷新'),
-      createElement('span',{key:1},'释放更新'),
-      createElement('img',{key:2,width:30,src:loadingImg}),
-      createElement('span',{key:3},'加载完毕')
-    ];
-  }
-
   render(){
-    let children = this.props.children || this.getDefaultChildren();
-    const { className, status, statusList, size} = this.props;
+    const { className, status, statusList, size ,children} = this.props;
     return (
       <div
-      className={classNames('react-refresher',className)}
+      className={classNames('react-status-manager',className)}
       style={{fontSize:size}}
       data-status={status}
       >

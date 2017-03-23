@@ -9,8 +9,8 @@ base.entry = {
 base.output = {
   path: config.build.assetsRoot,
   publicPath: config.build.assetsPublicPath,
-  filename: 'react-refresher.js',
-  library: 'ReactRefresher',
+  filename: 'react-status-manager.js',
+  library: 'ReactStatusManager',
   libraryTarget: 'umd'
 }
 

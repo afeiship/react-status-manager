@@ -1,2 +1,2 @@
-import ReactRefresher from 'components/react-refresher';
-export default ReactRefresher;
+import ReactStatusManager from 'components/react-status-manager';
+export default ReactStatusManager;

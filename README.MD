@@ -1,5 +1,5 @@
-# react-refresher
-> React refresher for pull to refresh.
+# react-status-manager
+> React component for status manager.
 
 
 ## resource:
@@ -16,5 +16,5 @@
 
 ## usage:
 ```html
-<react-refresher :visible="true" />
+<react-status-manager :visible="true" />
 ```

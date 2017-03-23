@@ -1,6 +1,6 @@
 import './dev.scss';
-import ReactRefresher from './main';
-import loadingImg from 'assets/default.gif';
+import ReactStatusManager from './main';
+import loadingImg from 'assets/loading.svg';
 
 class App extends React.Component{
   constructor(props){
@@ -30,7 +30,12 @@ class App extends React.Component{
   render(){
     return (
       <div className="hello-react-refresher">
-        <ReactRefresher size="16px" status={this.state.status} />
+        <ReactStatusManager size="16px" status={this.state.status}>
+          <span>下拉刷新</span>
+          <span>释放更新</span>
+          <img width="30" src={loadingImg} alt="" />
+          <span>更新完毕</span>
+        </ReactStatusManager>
 
         <button onClick={this.click1}>to `init`</button>
         <button onClick={this.click2}>to `active`</button>
