@@ -57,7 +57,7 @@ class App extends React.Component{
         <button onClick={this.click4}>to `finish`</button>
 
         <button onClick={this._click5}>SetSMStatus</button>
-    </>
+      </div>
     );
   }
 }
