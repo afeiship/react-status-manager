@@ -6,7 +6,8 @@ class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      status:'init'
+      status:'init',
+      smStatus:'N'
     };
   }
 
@@ -27,6 +28,12 @@ class App extends React.Component{
     console.log('click4');
   }
 
+  _click5 =(e)=>{
+    this.setState({
+      smStatus:'A'
+    })
+  };
+
   render(){
     return (
       <div className="hello-react-refresher">
@@ -37,11 +44,20 @@ class App extends React.Component{
           <span>更新完毕</span>
         </ReactStatusManager>
 
+
+        <ReactStatusManager status={this.state.smStatus} className={`wp-icon-${this.state.smStatus}`} statusList={['N','A','F']}>
+          <span>未开始</span>
+          <span>进行中</span>
+          <span>已经结束</span>
+        </ReactStatusManager>
+
         <button onClick={this.click1}>to `init`</button>
         <button onClick={this.click2}>to `active`</button>
         <button onClick={this.click3}>to `running`</button>
         <button onClick={this.click4}>to `finish`</button>
-    </div>
+
+        <button onClick={this._click5}>SetSMStatus</button>
+    </>
     );
   }
 }
