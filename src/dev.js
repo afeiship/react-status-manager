@@ -1,4 +1,5 @@
 import './dev.scss';
+
 import ReactStatusManager from './main';
 import loadingImg from 'assets/loading.svg';
 
@@ -37,7 +38,7 @@ class App extends React.Component{
   render(){
     return (
       <div className="hello-react-refresher">
-        <ReactStatusManager size="16px" status={this.state.status}>
+        <ReactStatusManager size="16px" status={this.state.status} statusList={['init','active','running','finish']}>
           <span>下拉刷新</span>
           <span>释放更新</span>
           <img width="30" src={loadingImg} alt="" />

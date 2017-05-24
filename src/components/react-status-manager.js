@@ -1,28 +1,25 @@
-import './style.scss';
+import {PureComponent, createElement} from 'react';
+
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import {createElement,PureComponent,PropTypes} from 'react';
 
 export default class extends PureComponent{
   static propTypes = {
     className:PropTypes.string,
-    status:PropTypes.string,
-    size:PropTypes.string,
     statusList:PropTypes.array
   };
 
   static defaultProps = {
-    status:'init',
-    size:'14px',
-    statusList:['init']
+    statusList:[]
   };
 
   render(){
-    const { className, status, statusList, size ,children} = this.props;
+    const { className, status, statusList, size ,children,...props} = this.props;
     return (
       <div
       className={classNames('react-status-manager',className)}
-      style={{fontSize:size}}
       data-status={status}
+      {...props}
       >
         {
           children.map((child,index)=>{
