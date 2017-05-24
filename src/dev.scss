@@ -40,4 +40,14 @@ ul,li{list-style: none;}
       outline: none;
     }
   }
+
+  .step{
+    background: #f60;
+    color:#fff;
+    padding:10px;
+    button{
+      width:30%;
+      padding:10px;
+    }
+  }
 }

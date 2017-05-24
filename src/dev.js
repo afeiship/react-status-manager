@@ -3,12 +3,14 @@ import './dev.scss';
 import ReactStatusManager from './main';
 import loadingImg from 'assets/loading.svg';
 
+/*===example start===*/
 class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
       status:'init',
-      smStatus:'N'
+      smStatus:'N',
+      step:0,
     };
   }
 
@@ -35,6 +37,13 @@ class App extends React.Component{
     })
   };
 
+  _clickStep = (e) =>{
+    let step = this.state.step;
+    this.setState({
+      step: step ===3 ? 0: step+1
+    })
+  };
+
   render(){
     return (
       <div className="hello-react-refresher">
@@ -58,11 +67,20 @@ class App extends React.Component{
         <button onClick={this.click4}>to `finish`</button>
 
         <button onClick={this._click5}>SetSMStatus</button>
+
+          <h2>Wizard</h2>
+          <button onClick={this._clickStep}>next step</button>
+          <ReactStatusManager status={this.state.step} statusList={[0,1,2,3]}>
+            <div className="step">step1,input password</div>
+            <div className="step">step2,input phone</div>
+            <div className="step">step3,input other info</div>
+            <div className="step">step4,do submit! <button>SUBMIT</button></div>
+          </ReactStatusManager>
       </div>
     );
   }
 }
-
+/*===example end===*/
 
 ReactDOM.render(
     <App />,
