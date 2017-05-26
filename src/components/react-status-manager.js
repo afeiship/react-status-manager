@@ -7,7 +7,8 @@ export default class extends PureComponent{
   /*===properties start===*/
   static propTypes = {
     className:PropTypes.string,
-    statusList:PropTypes.array
+    statusList:PropTypes.array,
+    status:PropTypes.any
   };
 
   static defaultProps = {
