@@ -6,13 +6,13 @@ import classNames from 'classnames';
 export default class extends Component{
   /*===properties start===*/
   static propTypes = {
-    className:PropTypes.string,
-    statusList:PropTypes.array,
-    status:PropTypes.any
+    className: PropTypes.string,
+    statusList: PropTypes.array,
+    status: PropTypes.any
   };
 
   static defaultProps = {
-    statusList:[]
+    statusList: []
   };
   /*===properties end===*/
 

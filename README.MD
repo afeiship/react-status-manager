@@ -6,13 +6,13 @@
 ```javascript
 
   static propTypes = {
-    className:PropTypes.string,
-    statusList:PropTypes.array,
-    status:PropTypes.any
+    className: PropTypes.string,
+    statusList: PropTypes.array,
+    status: PropTypes.any
   };
 
   static defaultProps = {
-    statusList:[]
+    statusList: []
   };
   
 ```
