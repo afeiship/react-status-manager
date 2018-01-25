@@ -1,9 +1,9 @@
-import {PureComponent, createElement} from 'react';
+import { Component, createElement } from 'react';
 
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export default class extends PureComponent{
+export default class extends Component{
   /*===properties start===*/
   static propTypes = {
     className:PropTypes.string,
