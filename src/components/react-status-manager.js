@@ -19,11 +19,7 @@ export default class extends Component{
   render(){
     const { className, status, statusList, size ,children,...props} = this.props;
     return (
-      <div
-      className={classNames('react-status-manager',className)}
-      data-status={status}
-      {...props}
-      >
+      <div {...props} className={classNames('react-status-manager',className)} data-status={status}>
         {
           children.map((child,index)=>{
             return status === statusList[index] && child;
