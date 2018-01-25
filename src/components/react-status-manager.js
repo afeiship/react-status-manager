@@ -17,7 +17,7 @@ export default class extends Component{
   /*===properties end===*/
 
   render(){
-    const { className, status, statusList, size ,children,...props} = this.props;
+    const { className, status, statusList, children, ...props } = this.props;
     return (
       <div {...props} className={classNames('react-status-manager',className)} data-status={status}>
         {
