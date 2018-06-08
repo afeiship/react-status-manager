@@ -8,11 +8,13 @@
   static propTypes = {
     className: PropTypes.string,
     statusList: PropTypes.array,
-    status: PropTypes.any
+    status: PropTypes.any,
+    nodeName: PropTypes.any
   };
 
   static defaultProps = {
-    statusList: []
+    statusList: [],
+    nodeName: 'div'
   };
   
 ```
@@ -98,6 +100,13 @@ class App extends React.Component{
 
 ```
 
+## in react-native
+```jsx
+<ReactStatusManager nodeName={View} status={'A'} statusList={['N','A']}>
+  <Text>TEXT-N</Text>
+  <Text>TEXT-A</Text>
+</ReactStatusManager>
+```
 
 
 ## resource:

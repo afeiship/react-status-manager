@@ -12,6 +12,13 @@ BACKUP_PROPERTIES
 BACKUP_USAGE
 ```
 
+## in react-native
+```jsx
+<ReactStatusManager nodeName={View} status={'A'} statusList={['N','A']}>
+  <Text>TEXT-N</Text>
+  <Text>TEXT-A</Text>
+</ReactStatusManager>
+```
 
 
 ## resource:
