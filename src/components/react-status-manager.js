@@ -28,7 +28,6 @@ export default class extends Component {
   render() {
     const { className, status, statusList, children, nodeName, ...props } = this.props;
     return createElement(nodeName,{
-      className: classNames('react-status-manager', className),
       'data-status': status,
       children: this.children,
       ...props
