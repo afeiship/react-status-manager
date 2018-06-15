@@ -14,7 +14,7 @@
 
   static defaultProps = {
     statusList: [],
-    nodeName: 'div'
+    nodeName: React.Fragment
   };
   
 ```
