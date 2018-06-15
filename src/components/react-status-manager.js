@@ -1,7 +1,5 @@
 import { Component, createElement } from 'react';
-
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 export default class extends Component {
   /*===properties start===*/
@@ -14,7 +12,7 @@ export default class extends Component {
 
   static defaultProps = {
     statusList: [],
-    nodeName: React.Fragment || 'div'
+    nodeName: React.Fragment
   };
   /*===properties end===*/
 
@@ -28,7 +26,6 @@ export default class extends Component {
   render() {
     const { className, status, statusList, children, nodeName, ...props } = this.props;
     return createElement(nodeName,{
-      'data-status': status,
       children: this.children,
       ...props
     });
