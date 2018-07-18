@@ -90,6 +90,7 @@
   },
   "dependencies": {
     "classnames": "*",
-    "prop-types": "*"
+    "prop-types": "*",
+    "react-default-node-name": "github:afeiship/react-default-node-name"
   }
 }

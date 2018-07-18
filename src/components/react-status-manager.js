@@ -1,5 +1,6 @@
 import { Component, createElement } from 'react';
 import PropTypes from 'prop-types';
+import nodeName from 'react-default-node-name';
 
 export default class extends Component {
   /*===properties start===*/
@@ -12,11 +13,11 @@ export default class extends Component {
 
   static defaultProps = {
     statusList: [],
-    nodeName: React.Fragment
+    nodeName: nodeName()
   };
   /*===properties end===*/
 
-  get children(){
+  get children() {
     const { status, children, statusList } = this.props;
     return children.map((child, index) => {
       return status === statusList[index] ? child : null;
@@ -25,7 +26,7 @@ export default class extends Component {
 
   render() {
     const { className, status, statusList, children, nodeName, ...props } = this.props;
-    return createElement(nodeName,{
+    return createElement(nodeName, {
       children: this.children,
       ...props
     });

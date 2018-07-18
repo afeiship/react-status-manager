@@ -4,13 +4,14 @@ var config = require('../config')
 var utils = require('./utils')
 var env = process.env.NODE_ENV;
 
-  // check env & config/index.js to decide weither to enable CSS Sourcemaps for the
-  // various preprocessor loaders added to vue-loader at the end of this file
+// check env & config/index.js to decide weither to enable CSS Sourcemaps for the
+// various preprocessor loaders added to vue-loader at the end of this file
 var cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap)
 var cssSourceMapProd = (env === 'production' && config.build.productionSourceMap)
 var useCssSourceMap = cssSourceMapDev || cssSourceMapProd;
 var externals = process.env.NODE_ENV === 'production' ? {
-  react: 'react',
+  'react': 'react',
+  'react-default-node-name': 'react-default-node-name',
   "prop-types": "prop-types",
   'react-dom': 'react-dom'
 } : {};
@@ -25,7 +26,7 @@ module.exports = {
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx','.scss'],
+    extensions: ['', '.js', '.jsx', '.scss'],
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
       React: path.resolve(__dirname, '../node_modules/react'),
@@ -35,10 +36,10 @@ module.exports = {
       'components': path.resolve(__dirname, '../src/components')
     }
   },
-  plugins:[
+  plugins: [
     new webpack.ProvidePlugin({
-        'React': 'react',
-        'ReactDOM': 'react-dom'
+      'React': 'react',
+      'ReactDOM': 'react-dom'
     }),
   ],
   resolveLoader: {
@@ -53,7 +54,7 @@ module.exports = {
     }, {
       test: /\.css$/,
       loader: 'style-loader!css-loader!autoprefixer-loader',
-    },  {
+    }, {
       test: /\.scss$/,
       loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader'
     }, {
@@ -67,7 +68,7 @@ module.exports = {
       loader: 'html-loader'
     }, {
       test: /\.js|jsx$/,
-      loaders: ["react-hot-loader/webpack",'babel-loader?presets[]=react,presets[]=es2015'],
+      loaders: ["react-hot-loader/webpack", 'babel-loader?presets[]=react,presets[]=es2015'],
       include: path.join(__dirname, 'js')
     }]
   }
