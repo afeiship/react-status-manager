@@ -6,8 +6,8 @@ export default class extends Component {
   /*===properties start===*/
   static propTypes = {
     className: PropTypes.string,
-    statusList: PropTypes.array,
-    status: PropTypes.any,
+    items: PropTypes.array,
+    value: PropTypes.any,
     nodeName: PropTypes.any
   };
 
@@ -18,14 +18,14 @@ export default class extends Component {
   /*===properties end===*/
 
   get children() {
-    const { status, children, statusList } = this.props;
+    const { value, children, items } = this.props;
     return children.map((child, index) => {
-      return status === statusList[index] ? child : null;
+      return value === items[index] ? child : null;
     });
   }
 
   render() {
-    const { className, status, statusList, children, nodeName, ...props } = this.props;
+    const { className, value, items, children, nodeName, ...props } = this.props;
     return createElement(nodeName, {
       children: this.children,
       ...props

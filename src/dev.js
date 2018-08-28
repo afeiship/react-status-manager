@@ -1,6 +1,6 @@
 import './dev.scss';
 
-import ReactStatusManager from './main';
+import ReactvalueManager from './main';
 import loadingImg from 'assets/loading.svg';
 
 /*===example start===*/
@@ -8,32 +8,32 @@ class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      status:'init',
-      smStatus:'N',
+      value:'init',
+      smvalue:'N',
       step:0,
     };
   }
 
   click1 = (e)=>{
-    this.setState({status:'init'});
+    this.setState({value:'init'});
     console.log('click1');
   }
   click2 = (e)=>{
-    this.setState({status:'active'});
+    this.setState({value:'active'});
     console.log('click2');
   }
   click3 = (e)=>{
-    this.setState({status:'running'});
+    this.setState({value:'running'});
     console.log('click3');
   }
   click4 = (e)=>{
-    this.setState({status:'finish'});
+    this.setState({value:'finish'});
     console.log('click4');
   }
 
   _click5 =(e)=>{
     this.setState({
-      smStatus:'A'
+      smvalue:'A'
     })
   };
 
@@ -47,35 +47,35 @@ class App extends React.Component{
   render(){
     return (
       <div className="hello-react-refresher">
-        <ReactStatusManager size="16px" status={this.state.status} statusList={['init','active','running','finish']}>
+        <ReactvalueManager size="16px" value={this.state.value} items={['init','active','running','finish']}>
           <span>下拉刷新</span>
           <span>释放更新</span>
           <img width="30" src={loadingImg} alt="" />
           <span>更新完毕</span>
-        </ReactStatusManager>
+        </ReactvalueManager>
 
 
-        <ReactStatusManager status={this.state.smStatus} className={`wp-icon-${this.state.smStatus}`} statusList={['N','A','F']}>
+        <ReactvalueManager value={this.state.smvalue} className={`wp-icon-${this.state.smvalue}`} items={['N','A','F']}>
           <span>未开始</span>
           <span>进行中</span>
           <span>已经结束</span>
-        </ReactStatusManager>
+        </ReactvalueManager>
 
         <button onClick={this.click1}>to `init`</button>
         <button onClick={this.click2}>to `active`</button>
         <button onClick={this.click3}>to `running`</button>
         <button onClick={this.click4}>to `finish`</button>
 
-        <button onClick={this._click5}>SetSMStatus</button>
+        <button onClick={this._click5}>SetSMvalue</button>
 
           <h2>Wizard</h2>
           <button onClick={this._clickStep}>next step</button>
-          <ReactStatusManager status={this.state.step} statusList={[0,1,2,3]}>
+          <ReactvalueManager value={this.state.step} items={[0,1,2,3]}>
             <div className="step">step1,input password</div>
             <div className="step">step2,input phone</div>
             <div className="step">step3,input other info</div>
             <div className="step">step4,do submit! <button>SUBMIT</button></div>
-          </ReactStatusManager>
+          </ReactvalueManager>
       </div>
     );
   }
