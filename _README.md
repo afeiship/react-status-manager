@@ -20,6 +20,8 @@ BACKUP_USAGE
 </ReactStatusManager>
 ```
 
+## todos:
+- [ ] status/statusList -> value/items
 
 ## resource:
 + http://ionicframework.com/docs/components/#full-buttons
