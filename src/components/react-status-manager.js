@@ -12,7 +12,7 @@ export default class extends Component {
   };
 
   static defaultProps = {
-    statusList: [],
+    items: [],
     nodeName: nodeName()
   };
   /*===properties end===*/
