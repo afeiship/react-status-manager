@@ -1,2 +1,2 @@
-import ReactStatusManager from 'components/react-status-manager';
+import ReactStatusManager from './components';
 export default ReactStatusManager;

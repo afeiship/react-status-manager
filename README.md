@@ -1,116 +1,50 @@
 # react-status-manager
 > React component for status manager.
 
+## install
+```shell
+npm install -S afeiship/react-status-manager
+```
 
-## properties:
-```javascript
+## usage
+1. import css
+  ```scss
+  @import "~react-status-manager/style.scss";
 
-  static propTypes = {
-    className: PropTypes.string,
-    items: PropTypes.array,
-    value: PropTypes.any,
-    nodeName: PropTypes.any
-  };
-
-  static defaultProps = {
-    items: [],
-    nodeName: nodeName()
-  };
+  // customize your styles:
+  $react-status-manager-options: ()
+  ```
+2. import js
+  ```js
+  import React from 'react';
+  import ReactDOM from 'react-dom';
+  import ReactStatusManager from 'react-status-manager';
   
-```
-
-## usage:
-```jsx
-class App extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      value:'init',
-      smvalue:'N',
-      step:0,
-    };
+  // your app:
+  class App extends React.Component{
+    render(){
+      return (
+        <ReactStatusManager />
+      )
+    }
   }
 
-  click1 = (e)=>{
-    this.setState({value:'init'});
-    console.log('click1');
-  }
-  click2 = (e)=>{
-    this.setState({value:'active'});
-    console.log('click2');
-  }
-  click3 = (e)=>{
-    this.setState({value:'running'});
-    console.log('click3');
-  }
-  click4 = (e)=>{
-    this.setState({value:'finish'});
-    console.log('click4');
-  }
+  // render to dom:
+  ReactDOM.render(<App/>, document.getElementById('app'));
+  ```
 
-  _click5 =(e)=>{
-    this.setState({
-      smvalue:'A'
-    })
-  };
+## documentation
+- https://afeiship.github.io/react-status-manager/
 
-  _clickStep = (e) =>{
-    let step = this.state.step;
-    this.setState({
-      step: step ===3 ? 0: step+1
-    })
-  };
+## resouces
+- https://www.robinwieruch.de/minimal-react-webpack-babel-setup/
+- https://www.valentinog.com/blog/react-webpack-babel/
+- https://jestjs.io/docs/en/tutorial-react#snapshot-testing-with-mocks-enzyme-and-react-16
+- https://testing-library.com/docs/react-testing-library/api
 
-  render(){
-    return (
-      <div className="hello-react-refresher">
-        <ReactvalueManager size="16px" value={this.state.value} items={['init','active','running','finish']}>
-          <span>下拉刷新</span>
-          <span>释放更新</span>
-          <img width="30" src={loadingImg} alt="" />
-          <span>更新完毕</span>
-        </ReactvalueManager>
-
-
-        <ReactvalueManager value={this.state.smvalue} className={`wp-icon-${this.state.smvalue}`} items={['N','A','F']}>
-          <span>未开始</span>
-          <span>进行中</span>
-          <span>已经结束</span>
-        </ReactvalueManager>
-
-        <button onClick={this.click1}>to `init`</button>
-        <button onClick={this.click2}>to `active`</button>
-        <button onClick={this.click3}>to `running`</button>
-        <button onClick={this.click4}>to `finish`</button>
-
-        <button onClick={this._click5}>SetSMvalue</button>
-
-          <h2>Wizard</h2>
-          <button onClick={this._clickStep}>next step</button>
-          <ReactvalueManager value={this.state.step} items={[0,1,2,3]}>
-            <div className="step">step1,input password</div>
-            <div className="step">step2,input phone</div>
-            <div className="step">step3,input other info</div>
-            <div className="step">step4,do submit! <button>SUBMIT</button></div>
-          </ReactvalueManager>
-      </div>
-    );
-  }
-}
-
-```
-
-## in react-native
-```jsx
-<ReactStatusManager nodeName={View} status={'A'} statusList={['N','A']}>
-  <Text>TEXT-N</Text>
-  <Text>TEXT-A</Text>
-</ReactStatusManager>
-```
-
-## todos:
-- [ ] status/statusList -> value/items
-
-## resource:
-+ http://ionicframework.com/docs/components/#full-buttons
-
+## todos
+- [ ] Add: semver number for every build files.
+- [ ] Add: need output css files.
+- [ ] Add: PWA support for docs.
+- [ ] Add: source.map file for dist(`you can upload for production debug`).
+- [ ] BUG: npm run dev will clean dist.

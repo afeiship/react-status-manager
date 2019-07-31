@@ -1,6 +1,11 @@
-import { Component, createElement } from 'react';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import nodeName from 'react-default-node-name';
+import classNames from 'classnames';
+import noop from 'noop';
+import objectAssign from 'object-assign';
+
+const CLASS_NAME = 'react-status-manager';
 
 export default class extends Component {
   /*===properties start===*/
@@ -8,12 +13,14 @@ export default class extends Component {
     className: PropTypes.string,
     items: PropTypes.array,
     value: PropTypes.any,
-    nodeName: PropTypes.any
+    nodeName: PropTypes.any,
+    virtual: PropTypes.bool
   };
 
   static defaultProps = {
     items: [],
-    nodeName: nodeName()
+    nodeName: 'div',
+    virtual: false
   };
   /*===properties end===*/
 
@@ -25,8 +32,9 @@ export default class extends Component {
   }
 
   render() {
-    const { value, items, children, nodeName, ...props } = this.props;
-    return createElement(nodeName, {
+    const { value, items, children, nodeName, virtual, ...props } = this.props;
+    const _nodeName = virtual ? React.Fragment : nodeName;
+    return React.createElement(_nodeName, {
       children: this.children,
       ...props
     });
