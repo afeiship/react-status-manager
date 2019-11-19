@@ -58,6 +58,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "@feizheng/noop": "^1.0.0",
     "classnames": "^2.2.6",
     "node-sass": "^4.12.0",
     "noop": "github:afeiship/noop",

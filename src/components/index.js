@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import noop from 'noop';
+import noop from '@feizheng/noop';
 import objectAssign from 'object-assign';
 
-const CLASS_NAME = 'react-status-manager';
-
 export default class extends Component {
+  static displayName = 'RSM';
   /*===properties start===*/
   static propTypes = {
     className: PropTypes.string,
