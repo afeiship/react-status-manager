@@ -1,5 +1,5 @@
 {
-  "name": "react-status-manager",
+  "name": "@feizheng/react-status-manager",
   "version": "1.0.0",
   "description": "React component for status manager.",
   "main": "dist/index.js",
@@ -61,7 +61,6 @@
     "@feizheng/noop": "^1.0.0",
     "classnames": "^2.2.6",
     "node-sass": "^4.12.0",
-    "noop": "github:afeiship/noop",
     "prop-types": "^15.7.2",
     "react": "^16.8.5",
     "react-dom": "^16.8.5"

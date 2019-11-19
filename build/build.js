@@ -12,6 +12,8 @@ import {
 export default merge(baseConfig, {
   entry: inputs.build(),
   output: outputs.build(),
-  externals: externals.base(),
+  externals: externals.base({
+    '@feizheng/noop': '@feizheng/noop'
+  }),
   plugins: [plugins.clean(), plugins.copyStyles()]
 });
