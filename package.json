@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/react-status-manager",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "React component for status manager.",
   "main": "dist/index.js",
   "scripts": {
@@ -44,17 +44,17 @@
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.0",
+    "@feizheng/rake-git": "^1.2.0",
+    "@feizheng/webpack-lib-kits": "^1.1.0",
     "babel-loader": "^8.0.5",
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
     "jest": "^24.5.0",
     "prettier": "^1.16.4",
-    "rake-git": "github:afeiship/rake-git",
     "react-testing-library": "^6.0.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1",
-    "webpack-lib-kits": "github:afeiship/webpack-lib-kits",
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
