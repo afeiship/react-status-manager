@@ -1,18 +1,30 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import noop from '@feizheng/noop';
-import objectAssign from 'object-assign';
 
-export default class extends Component {
-  static displayName = 'RSM';
-  /*===properties start===*/
+const CLASS_NAME = 'react-status-manager';
+
+export default class ReactStatusManager extends Component {
+  static displayName = CLASS_NAME;
   static propTypes = {
+    /**
+     * The extended className for component.
+     */
     className: PropTypes.string,
+    /**
+     * The status list.
+     */
     items: PropTypes.array,
+    /**
+     * Current status value.
+     */
     value: PropTypes.any,
+    /**
+     * The node name.
+     */
     nodeName: PropTypes.any,
+    /**
+     * If use React.Fragment element.
+     */
     virtual: PropTypes.bool
   };
 
@@ -21,7 +33,6 @@ export default class extends Component {
     nodeName: 'div',
     virtual: false
   };
-  /*===properties end===*/
 
   get children() {
     const { value, children, items } = this.props;

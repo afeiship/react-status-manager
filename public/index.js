@@ -1,6 +1,7 @@
-import ReactStatusManager from '../src/main';
-import ReactDOM from 'react-dom';
+import ReactDemokit from '@jswork/react-demokit';
 import React from 'react';
+import ReactDOM from 'react-dom';
+import ReactStatusManager from '../src/main';
 import './assets/style.scss';
 
 class App extends React.Component {
@@ -45,7 +46,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="app-container">
+      <ReactDemokit
+        className="p-3 app-container"
+        url="https://github.com/afeiship/react-status-manager">
         <ReactStatusManager
           size="16px"
           value={this.state.value}
@@ -71,15 +74,38 @@ class App extends React.Component {
           <span>已经结束</span>
         </ReactStatusManager>
 
-        <button onClick={this.click1}>to `init`</button>
-        <button onClick={this.click2}>to `active`</button>
-        <button onClick={this.click3}>to `running`</button>
-        <button onClick={this.click4}>to `finish`</button>
-
-        <button onClick={this._click5}>SetSMvalue</button>
+        <button
+          className="button is-primary is-fullwidth mb-2"
+          onClick={this.click1}>
+          to `init`
+        </button>
+        <button
+          className="button is-primary is-fullwidth mb-2"
+          onClick={this.click2}>
+          to `active`
+        </button>
+        <button
+          className="button is-primary is-fullwidth mb-2"
+          onClick={this.click3}>
+          to `running`
+        </button>
+        <button
+          className="button is-primary is-fullwidth mb-2"
+          onClick={this.click4}>
+          to `finish`
+        </button>
+        <button
+          className="button is-primary is-fullwidth mb-2"
+          onClick={this._click5}>
+          SetSMvalue
+        </button>
 
         <h2>Wizard</h2>
-        <button onClick={this._clickStep}>next step</button>
+        <button
+          className="button is-primary is-fullwidth mb-2"
+          onClick={this._clickStep}>
+          next step
+        </button>
         <ReactStatusManager value={this.state.step} items={[0, 1, 2, 3]}>
           <div className="step">step1,input password</div>
           <div className="step">step2,input phone</div>
@@ -88,7 +114,7 @@ class App extends React.Component {
             step4,do submit! <button>SUBMIT</button>
           </div>
         </ReactStatusManager>
-      </div>
+      </ReactDemokit>
     );
   }
 }

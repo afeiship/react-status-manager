@@ -1,24 +1,43 @@
 # react-status-manager
 > React component for status manager.
 
-## install
+[![version][version-image]][version-url]
+[![license][license-image]][license-url]
+[![size][size-image]][size-url]
+[![download][download-image]][download-url]
+
+## installation
 ```shell
-npm install -S afeiship/react-status-manager
+npm install -S @jswork/react-status-manager
 ```
+
+## properties
+| Name      | Type   | Required | Default | Description                           |
+| --------- | ------ | -------- | ------- | ------------------------------------- |
+| className | string | false    | -       | The extended className for component. |
+| items     | array  | false    | []      | The status list.                      |
+| value     | any    | false    | -       | Current status value.                 |
+| nodeName  | any    | false    | 'div'   | The node name.                        |
+| virtual   | bool   | false    | false   | If use React.Fragment element.        |
+
 
 ## usage
 1. import css
   ```scss
-  @import "~react-status-manager/style.scss";
+  @import "~@jswork/react-status-manager/dist/style.css";
+
+  // or use sass
+  @import "~@jswork/react-status-manager/dist/style.scss";
 
   // customize your styles:
   $react-status-manager-options: ()
   ```
 2. import js
   ```js
-  import ReactStatusManager from '../src/main';
-  import ReactDOM from 'react-dom';
+  import ReactDemokit from '@jswork/react-demokit';
   import React from 'react';
+  import ReactDOM from 'react-dom';
+  import ReactStatusManager from '@jswork/react-status-manager';
   import './assets/style.scss';
 
   class App extends React.Component {
@@ -63,7 +82,9 @@ npm install -S afeiship/react-status-manager
 
     render() {
       return (
-        <div className="app-container">
+        <ReactDemokit
+          className="p-3 app-container"
+          url="https://github.com/afeiship/react-status-manager">
           <ReactStatusManager
             size="16px"
             value={this.state.value}
@@ -89,15 +110,38 @@ npm install -S afeiship/react-status-manager
             <span>已经结束</span>
           </ReactStatusManager>
 
-          <button onClick={this.click1}>to `init`</button>
-          <button onClick={this.click2}>to `active`</button>
-          <button onClick={this.click3}>to `running`</button>
-          <button onClick={this.click4}>to `finish`</button>
-
-          <button onClick={this._click5}>SetSMvalue</button>
+          <button
+            className="button is-primary is-fullwidth mb-2"
+            onClick={this.click1}>
+            to `init`
+          </button>
+          <button
+            className="button is-primary is-fullwidth mb-2"
+            onClick={this.click2}>
+            to `active`
+          </button>
+          <button
+            className="button is-primary is-fullwidth mb-2"
+            onClick={this.click3}>
+            to `running`
+          </button>
+          <button
+            className="button is-primary is-fullwidth mb-2"
+            onClick={this.click4}>
+            to `finish`
+          </button>
+          <button
+            className="button is-primary is-fullwidth mb-2"
+            onClick={this._click5}>
+            SetSMvalue
+          </button>
 
           <h2>Wizard</h2>
-          <button onClick={this._clickStep}>next step</button>
+          <button
+            className="button is-primary is-fullwidth mb-2"
+            onClick={this._clickStep}>
+            next step
+          </button>
           <ReactStatusManager value={this.state.step} items={[0, 1, 2, 3]}>
             <div className="step">step1,input password</div>
             <div className="step">step2,input phone</div>
@@ -106,7 +150,7 @@ npm install -S afeiship/react-status-manager
               step4,do submit! <button>SUBMIT</button>
             </div>
           </ReactStatusManager>
-        </div>
+        </ReactDemokit>
       );
     }
   }
@@ -117,3 +161,19 @@ npm install -S afeiship/react-status-manager
 
 ## documentation
 - https://afeiship.github.io/react-status-manager/
+
+
+## license
+Code released under [the MIT license](https://github.com/afeiship/react-status-manager/blob/master/LICENSE.txt).
+
+[version-image]: https://img.shields.io/npm/v/@jswork/react-status-manager
+[version-url]: https://npmjs.org/package/@jswork/react-status-manager
+
+[license-image]: https://img.shields.io/npm/l/@jswork/react-status-manager
+[license-url]: https://github.com/afeiship/react-status-manager/blob/master/LICENSE.txt
+
+[size-image]: https://img.shields.io/bundlephobia/minzip/@jswork/react-status-manager
+[size-url]: https://github.com/afeiship/react-status-manager/blob/master/dist/react-status-manager.min.js
+
+[download-image]: https://img.shields.io/npm/dm/@jswork/react-status-manager
+[download-url]: https://www.npmjs.com/package/@jswork/react-status-manager
