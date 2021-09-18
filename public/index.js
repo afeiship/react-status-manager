@@ -50,6 +50,7 @@ class App extends React.Component {
         className="p-3 app-container"
         url="https://github.com/afeiship/react-status-manager">
         <ReactStatusManager
+          nodeName="div"
           size="16px"
           value={this.state.value}
           items={['init', 'active', 'running', 'finish']}>
@@ -66,6 +67,7 @@ class App extends React.Component {
         </ReactStatusManager>
 
         <ReactStatusManager
+          nodeName="div"
           value={this.state.smvalue}
           className={`wp-icon-${this.state.smvalue}`}
           items={['N', 'A', 'F']}>

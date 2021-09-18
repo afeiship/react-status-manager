@@ -15,17 +15,7 @@ npm install -S @jswork/react-status-manager
 __GENERATE_DOCS__
 
 ## usage
-1. import css
-  ```scss
-  @import "~@jswork/react-status-manager/dist/style.css";
-
-  // or use sass
-  @import "~@jswork/react-status-manager/dist/style.scss";
-
-  // customize your styles:
-  $react-status-manager-options: ()
-  ```
-2. import js
+1. import js
   ```js
 __GENERATE_DAPP__
   ```

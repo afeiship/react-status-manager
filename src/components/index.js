@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 
 const CLASS_NAME = 'react-status-manager';
@@ -21,17 +21,12 @@ export default class ReactStatusManager extends Component {
     /**
      * The node name.
      */
-    nodeName: PropTypes.any,
-    /**
-     * If use React.Fragment element.
-     */
-    virtual: PropTypes.bool
+    nodeName: PropTypes.any
   };
 
   static defaultProps = {
     items: [],
-    nodeName: 'div',
-    virtual: false
+    nodeName: Fragment
   };
 
   get children() {
@@ -42,11 +37,7 @@ export default class ReactStatusManager extends Component {
   }
 
   render() {
-    const { value, items, children, nodeName, virtual, ...props } = this.props;
-    const _nodeName = virtual ? React.Fragment : nodeName;
-    return React.createElement(_nodeName, {
-      children: this.children,
-      ...props
-    });
+    const { value, items, children, nodeName, ...props } = this.props;
+    return React.createElement(nodeName, { children: this.children, ...props });
   }
 }
