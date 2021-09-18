@@ -12,27 +12,16 @@ npm install -S @jswork/react-status-manager
 ```
 
 ## properties
-| Name      | Type   | Required | Default | Description                           |
-| --------- | ------ | -------- | ------- | ------------------------------------- |
-| className | string | false    | -       | The extended className for component. |
-| items     | array  | false    | []      | The status list.                      |
-| value     | any    | false    | -       | Current status value.                 |
-| nodeName  | any    | false    | 'div'   | The node name.                        |
-| virtual   | bool   | false    | false   | If use React.Fragment element.        |
+| Name      | Type   | Required | Default  | Description                           |
+| --------- | ------ | -------- | -------- | ------------------------------------- |
+| className | string | false    | -        | The extended className for component. |
+| items     | array  | false    | []       | The status list.                      |
+| value     | any    | false    | -        | Current status value.                 |
+| nodeName  | any    | false    | Fragment | The node name.                        |
 
 
 ## usage
-1. import css
-  ```scss
-  @import "~@jswork/react-status-manager/dist/style.css";
-
-  // or use sass
-  @import "~@jswork/react-status-manager/dist/style.scss";
-
-  // customize your styles:
-  $react-status-manager-options: ()
-  ```
-2. import js
+1. import js
   ```js
   import ReactDemokit from '@jswork/react-demokit';
   import React from 'react';
@@ -86,6 +75,7 @@ npm install -S @jswork/react-status-manager
           className="p-3 app-container"
           url="https://github.com/afeiship/react-status-manager">
           <ReactStatusManager
+            nodeName="div"
             size="16px"
             value={this.state.value}
             items={['init', 'active', 'running', 'finish']}>
@@ -102,6 +92,7 @@ npm install -S @jswork/react-status-manager
           </ReactStatusManager>
 
           <ReactStatusManager
+            nodeName="div"
             value={this.state.smvalue}
             className={`wp-icon-${this.state.smvalue}`}
             items={['N', 'A', 'F']}>
