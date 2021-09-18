@@ -1,6 +1,6 @@
 {
   "name": "@jswork/react-status-manager",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "React component for status manager.",
   "main": "dist/index.js",
   "scripts": {
