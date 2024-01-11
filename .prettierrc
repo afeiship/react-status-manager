@@ -1,39 +1,9 @@
 {
-  "trailingComma": "none",
-  "arrowParens": "always",
-  "printWidth": 80,
-  "bracketSpacing": true,
-  "jsxBracketSameLine": true,
+  "singleQuote": true,
+  "printWidth": 100,
   "tabWidth": 2,
   "semi": true,
-  "quoteProps": "consistent",
-  "singleQuote": true,
-  "overrides": [
-    {
-      "files": [
-        "*.json",
-        ".eslintrc",
-        ".tslintrc",
-        ".prettierrc",
-        ".tern-project"
-      ],
-      "options": {
-        "parser": "json",
-        "tabWidth": 2
-      }
-    },
-    {
-      "files": "*.{css,sass,scss,less}",
-      "options": {
-        "parser": "postcss",
-        "tabWidth": 2
-      }
-    },
-    {
-      "files": "*.ts",
-      "options": {
-        "parser": "typescript"
-      }
-    }
-  ]
+  "jsxBracketSameLine": true,
+  "trailingComma": "es5",
+  "quoteProps": "consistent"
 }
