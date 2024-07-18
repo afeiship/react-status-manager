@@ -18,8 +18,9 @@ export default class ReactStatusManager extends Component<ReactStatusManagerProp
 
   get children() {
     const { value, children, items } = this.props;
+    const isItemsFn = typeof items === 'function';
     return children.map((child: ReactNode, index: number) => {
-      if (typeof items === 'function') return items({ child, index, value });
+      if (isItemsFn) return items({ child, index, value });
       const status = items[index];
       const isNestedArray = Array.isArray(status);
       if (typeof status !== value && isNestedArray) {
