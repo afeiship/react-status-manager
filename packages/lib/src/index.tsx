@@ -2,7 +2,7 @@ import React, { Fragment, Component } from 'react';
 
 export interface ReactStatusManagerProps extends React.PropsWithChildren<any> {
   className?: string;
-  items?: any[];
+  items: any[];
   value?: any;
   as?: any;
   asProps?: any;
@@ -17,7 +17,7 @@ export default class ReactStatusManager extends Component<ReactStatusManagerProp
   get children() {
     const { value, children, items } = this.props;
     return children.map((child, index) => {
-      return value === items![index] ? child : null;
+      return value === items[index] ? child : null;
     });
   }
 
