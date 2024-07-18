@@ -8,7 +8,7 @@ export interface ReactStatusManagerProps extends React.PropsWithChildren<any> {
   asProps?: any;
 }
 
-export default class Button extends Component<ReactStatusManagerProps> {
+export default class ReactStatusManager extends Component<ReactStatusManagerProps> {
   static defaultProps = {
     items: [],
     asProps: {},
