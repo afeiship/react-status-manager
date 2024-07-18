@@ -4,7 +4,6 @@ import { useState } from 'react';
 function App() {
   const [v1, setV1] = useState('init');
   const [v2, setV2] = useState('init');
-  const [v3, setV3] = useState('init');
   return (
     <div className="m-10 p-4 shadow bg-gray-100 text-gray-800 hover:shadow-md transition-all">
       <div className="badge badge-warning absolute right-0 top-0 m-4">
