@@ -1,107 +1,23 @@
-import React from 'react';
-import ReactStatusManager from '../../lib/src';
-import '@jswork/react-status-manager/src/style.scss';
-import './App.css';
+import { useState } from 'react';
+import Rsm from '@jswork/react-status-manager/src';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: 'init',
-      smvalue: 'N',
-      step: 0,
-    };
-  }
+const App = () => {
+  const [s1, setS1] = useState('init');
 
-  click1 = (e) => {
-    this.setState({ value: 'init' });
-    console.log('click1');
-  };
-  click2 = (e) => {
-    this.setState({ value: 'active' });
-    console.log('click2');
-  };
-  click3 = (e) => {
-    this.setState({ value: 'running' });
-    console.log('click3');
-  };
-  click4 = (e) => {
-    this.setState({ value: 'finish' });
-    console.log('click4');
-  };
-
-  _click5 = (e) => {
-    this.setState({
-      smvalue: 'A',
-    });
-  };
-
-  _clickStep = (e) => {
-    let step = this.state.step;
-    this.setState({
-      step: step === 3 ? 0 : step + 1,
-    });
-  };
-
-  render() {
-    return (
-      <>
-        <ReactStatusManager
-          as="div"
-          size="16px"
-          value={this.state.value}
-          items={['init', 'active', 'running', 'finish']}>
-          <span>下拉刷新</span>
-          <span>释放更新</span>
-          <img
-            width="30"
-            src={'https://assets-cdn.shimo.im/assets/images/loading-b67e5a67dc.gif'}
-            alt=""
-          />
-          <span>更新完毕</span>
-        </ReactStatusManager>
-
-        <ReactStatusManager
-          as="div"
-          value={this.state.smvalue}
-          className={`wp-icon-${this.state.smvalue}`}
-          items={['N', 'A', 'F']}>
-          <span>未开始</span>
-          <span>进行中</span>
-          <span>已经结束</span>
-        </ReactStatusManager>
-
-        <button className="button is-primary is-fullwidth mb-2" onClick={this.click1}>
-          to `init`
-        </button>
-        <button className="button is-primary is-fullwidth mb-2" onClick={this.click2}>
-          to `active`
-        </button>
-        <button className="button is-primary is-fullwidth mb-2" onClick={this.click3}>
-          to `running`
-        </button>
-        <button className="button is-primary is-fullwidth mb-2" onClick={this.click4}>
-          to `finish`
-        </button>
-        <button className="button is-primary is-fullwidth mb-2" onClick={this._click5}>
-          SetSMvalue
-        </button>
-
-        <h2>Wizard</h2>
-        <button className="button is-primary is-fullwidth mb-2" onClick={this._clickStep}>
-          next step
-        </button>
-        <ReactStatusManager value={this.state.step} items={[0, 1, 2, 3]}>
-          <div className="step">step1,input password</div>
-          <div className="step">step2,input phone</div>
-          <div className="step">step3,input other info</div>
-          <div className="step">
-            step4,do submit! <button>SUBMIT</button>
-          </div>
-        </ReactStatusManager>
-      </>
-    );
-  }
-}
-
+  return (
+    <div>
+      <h3>Normal Case</h3>
+      <nav>
+        <button onClick={() => setS1('a')}>A</button>
+        <button onClick={() => setS1('b')}>B</button>
+        <button onClick={() => setS1('c')}>C</button>
+      </nav>
+      <Rsm items={['a', 'b', 'c']} value={s1}>
+        <div>Status - A</div>
+        <div>Status - B</div>
+        <div>Status - C</div>
+      </Rsm>
+    </div>
+  );
+};
 export default App;
