@@ -1,10 +1,8 @@
 import React, { Fragment, Component, ReactNode } from 'react';
 
-type ItemsCallback = (args: { child: ReactNode; index: number; value: any }) => ReactNode;
-
 export interface ReactStatusManagerProps extends React.PropsWithChildren<any> {
   className?: string;
-  items: any[] | ItemsCallback;
+  items: any[];
   value?: any;
   as?: any;
   asProps?: any;
@@ -18,9 +16,7 @@ export default class ReactStatusManager extends Component<ReactStatusManagerProp
 
   get children() {
     const { value, children, items } = this.props;
-    const isItemsFn = typeof items === 'function';
     return children.map((child: ReactNode, index: number) => {
-      if (isItemsFn) return items({ child, index, value });
       const status = items[index];
       const isNestedArray = Array.isArray(status);
       if (typeof status !== value && isNestedArray) {
