@@ -14,7 +14,14 @@ const defaults: ReactStatusManagerProps = {
 };
 
 const ReactStatusManager: FC<ReactStatusManagerProps> = (props) => {
-  const { value, children, items, as: AsComponent = Fragment, asProps = {}, ...restProps } = { ...defaults, ...props };
+  const {
+    value,
+    children,
+    items,
+    as: AsComponent = Fragment,
+    asProps,
+    ...restProps
+  } = { ...defaults, ...props } as ReactStatusManagerProps;
 
   const renderChildren = () => {
     return React.Children.map(children, (child: ReactNode, index: number) => {
